@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Markov's Inequality Equality Example</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; line-height: 1.5; }
+  .proof-step { margin-top: 1em; }
+</style>
+</head>
+<body>
+
+<strong>Claim:</strong> There exists a non-negative random variable \(X\) and \(a > 0\) such that
+\[
+\mathbb{P}(X \geq a) = \frac{\mathbb{E}[X]}{a},
+\]
+i.e., Markov's inequality holds with equality.
+
+<div style="margin-top:1em;"><strong>Proof:</strong></div>
+
+Consider a random variable \(X\) defined as
+\[
+X = \begin{cases}
+a, & \text{with probability } p, \\
+0, & \text{with probability } 1 - p,
+\end{cases}
+\]
+where \(a > 0\) and \(0 \leq p \leq 1\).
+
+<div class="proof-step">
+1. Compute the expectation:
+\[
+\mathbb{E}[X] = a \cdot p + 0 \cdot (1-p) = a p.
+\]
+</div>
+
+<div class="proof-step">
+2. Compute the probability \(\mathbb{P}(X \geq a)\):
+\[
+\mathbb{P}(X \geq a) = \mathbb{P}(X = a) = p.
+\]
+</div>
+
+<div class="proof-step">
+3. Substitute the expectation into Markov’s inequality:
+\[
+\mathbb{P}(X \geq a) \leq \frac{\mathbb{E}[X]}{a} = \frac{a p}{a} = p.
+\]
+</div>
+
+Since \(\mathbb{P}(X \geq a) = p\), we have
+\[
+\mathbb{P}(X \geq a) = \frac{\mathbb{E}[X]}{a}.
+\]
+
+Hence, Markov's inequality holds with equality for this choice of \(X\).
+
+<p style="margin-top:1em;">&#9632; <!-- black square as QED symbol --></p>
+
+</body>
+</html>
